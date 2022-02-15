@@ -1,3 +1,3 @@
-# GET DAT FROM TIME.IR
+# GET DATA FROM TIME.IR
 
 Author @Gameraliaz
