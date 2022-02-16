@@ -44,3 +44,5 @@ def main():
             case _:
                 print(".....wrong.....")
                 skey=-1
+
+main()
