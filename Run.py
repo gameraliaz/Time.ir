@@ -1,5 +1,6 @@
 import GetData
 import SaveData
+import ModifyData
 
 
 def main():
@@ -32,6 +33,7 @@ def main():
         if skey!=3 and skey!=0:
             location=input("location? (empty=here) \n")
             namefile=input("File name? \n")
+            Data=ModifyData.OptimizeDayData(Data)
         match skey:
             case '1':
                 SaveData.ToCSV(location,namefile,Data)
