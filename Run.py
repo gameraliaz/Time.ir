@@ -9,13 +9,19 @@ def main():
     while mkey==-1:
         print("What do you want to do?")
         print("0-Exit")
-        print("1-GetEventList")
-        print("2-Get...")
-        print("3-Get...",'\n',':')
+        print("1-Get current month events list")
+        print("2-Get current year events list")
+        print("3-Get input month events list",'\n',':')
         mkey=input()
         match mkey:
             case '1':
-                Data=GetData.ListOfEvents()
+                Data.append(GetData.ListOfCurrentMonthEvents())
+            case '2':
+                Data=GetData.ListOfCurrentYearEvents()
+            case '3':
+                year=input("Year : ")
+                month=input("Month : ")
+                Data.append(GetData.ListOfMonthEvents(year,month))
             case '0':
                 return
             case _:
@@ -32,15 +38,17 @@ def main():
         skey=input()
         if skey!=3 and skey!=0:
             location=input("location? (empty=here) \n")
-            namefile=input("File name? \n")
-            Data=ModifyData.OptimizeDayData(Data)
+            for i in range(len(Data)):
+                Data[i]=ModifyData.OptimizeDayData(Data[i])
         match skey:
             case '1':
-                SaveData.ToCSV(location,namefile,Data)
+                for i in range(len(Data)):
+                    SaveData.ToCSV(location,str(i+1),Data[i])
             case '2':
-                SaveData.ToText(location,namefile,Data)
+                for i in range(len(Data)):
+                    SaveData.ToText(location,str(i+1),Data[i])
             case '3':
-                print(Data)
+                print(str(Data))
             case '0':
                 return
             case _:
