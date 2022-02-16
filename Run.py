@@ -40,7 +40,6 @@ def main():
         print("1-CSV file")
         print("2-Text file")
         print("3-Print")
-        print("4-... file",'\n',':')
         skey=input()
         if skey!=3 and skey!=0:
             location=input("location? (empty=here) \n")
