@@ -11,7 +11,8 @@ def main():
         print("0-Exit")
         print("1-Get current month events list")
         print("2-Get current year events list")
-        print("3-Get input month events list",'\n',':')
+        print("3-Get input month events list")
+        print("4-Get day events list")
         mkey=input()
         match mkey:
             case '1':
@@ -22,6 +23,11 @@ def main():
                 year=input("Year : ")
                 month=input("Month : ")
                 Data.append(GetData.ListOfMonthEvents(year,month))
+            case '4':
+                year=input("Year : ")
+                month=input("Month : ")
+                day=input("Day : ")
+                Data.append(GetData.ListOfDayEvents(year,month,day))
             case '0':
                 return
             case _:
