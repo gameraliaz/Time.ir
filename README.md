@@ -2,8 +2,12 @@
 
 Author @Gameraliaz
 
-# python 3.10
-# pip install requests
-# pip install beautifulsoup4
-# pip install lxml
-# pip install python-csv
+ python 3.10
+ 
+ pip install requests
+ 
+ pip install beautifulsoup4
+ 
+ pip install lxml
+ 
+ pip install python-csv
